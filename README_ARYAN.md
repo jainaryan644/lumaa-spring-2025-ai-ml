@@ -20,24 +20,24 @@ Create and activate a virtual environment:
 python -m venv venv
 source venv/bin/activate  # Mac/Linux
 venv\Scripts\activate     # Windows
-
+```
 ### **Running the System**
 To run the recommendation system, use:
 
 ```sh
 python test_recommender.py
-
+```
 This script automatically runs five test cases and displays recommended movies for each query.
 
 However, If you want to test a custom test case use this Python script:
-
+```sh
 from recommender import load_data, build_tfidf_matrix, recommend_movies
 
 df = load_data("movies.csv")
 vectorizer, tfidf_matrix = build_tfidf_matrix(df)
 query = "I love thrilling action movies set in space with a comedic twist."
 print(recommend_movies(query, df, vectorizer, tfidf_matrix))
-
+```
 ### **Example Query and Output:**
 
 Test 1: I love thrilling action movies set in space space space space with a comedic twist.
