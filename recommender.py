@@ -18,7 +18,7 @@ def load_data(filepath):
 def build_tfidf_matrix(df):
     vectorizer = TfidfVectorizer(stop_words='english')
     tfidf_matrix = vectorizer.fit_transform(df['Description'].fillna(''))
-    return tfidf_matrix
+    return vectorizer, tfidf_matrix
 
 #recommend top movies based on text similarity 
 def recommend_movies(user_query, df, vectorizer, tfidf_matrix, top_n=5):
