@@ -20,12 +20,18 @@ def build_tfidf_matrix(df):
     tfidf_matrix = vectorizer.fit_transform(df['Description'].fillna(''))
     return vectorizer, tfidf_matrix
 
-#recommend top movies based on text similarity 
+#recommend top movies based on cosine similarity 
 def recommend_movies(user_query, df, vectorizer, tfidf_matrix, top_n=5):
     query_vec = vectorizer.transform([user_query])
     similarity_scores = cosine_similarity(query_vec, tfidf_matrix).flatten()
     top_indices = np.argsort(similarity_scores)[::-1][:top_n]
-    return df.iloc[top_indices][['Name']]
+    recommended_df = df.iloc[top_indices][['Name']]
+
+    #retrieve descriptions separately
+    recommended_df['Description'] = recommended_df['Name'].apply(
+        lambda name: df.loc[df['Name'] == name, 'Description'].values[0]
+    )
+    return recommended_df
 
 #main
 if __name__ == "__main__":
