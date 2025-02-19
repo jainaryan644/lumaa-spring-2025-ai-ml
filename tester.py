@@ -26,6 +26,6 @@ print(f"\nTest 4: {query4}")
 print(recommend_movies(query4, df, vectorizer, tfidf_matrix))
 
 #Test 5: Nonsense 
-query5 = "Gabba jabba joop" 
+query5 = "Haloopia Baloopia" 
 print(f"\nTest 5: {query5}")
 print(recommend_movies(query5, df, vectorizer, tfidf_matrix))
