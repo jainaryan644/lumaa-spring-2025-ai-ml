@@ -29,15 +29,7 @@ python test_recommender.py
 ```
 This script automatically runs five test cases and displays recommended movies for each query.
 
-However, If you want to test a custom test case use this Python script:
-```sh
-from recommender import load_data, build_tfidf_matrix, recommend_movies
-
-df = load_data("movies.csv")
-vectorizer, tfidf_matrix = build_tfidf_matrix(df)
-query = "I love thrilling action movies set in space with a comedic twist."
-print(recommend_movies(query, df, vectorizer, tfidf_matrix))
-```
+However, If you want to test a custom test case use custom_tester.py
 ### **Example Query and Output:**
 
 Test 1: I love thrilling action movies set in space space space space with a comedic twist.
@@ -53,3 +45,7 @@ Test 1: I love thrilling action movies set in space space space space with a com
 The model relies only on text similarity, so it may sometimes match movies with related words but different themes.
 Genre filtering is not included since the dataset lacks genre information.
 A more advanced approach would use word embeddings (e.g., Word2Vec, BERT) to capture deeper meanings.
+
+
+## ** Salary Expectation**
+My expected salary for this role is **$3000 per month** (negotiable).

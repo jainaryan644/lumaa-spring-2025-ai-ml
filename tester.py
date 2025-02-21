@@ -6,17 +6,17 @@ df = load_data(dataset_path)
 vectorizer, tfidf_matrix = build_tfidf_matrix(df)
 
 #Test 1: Action-packed space 
-query1 = "I love thrilling action movies set in space with a comedic twist."
+query1 = "I love thrilling action movies set in space space space space with a comedic twist."
 print(f"\nTest 1: {query1}")
 print(recommend_movies(query1, df, vectorizer, tfidf_matrix))
 
 #Test 2: Emotional family drama
-query2 = "A heartwarming story about family and overcoming challenges."
+query2 = "A heartwarming story about family and overcoming challenges heartwarming heartwarming."
 print(f"\nTest 2: {query2}")
 print(recommend_movies(query2, df, vectorizer, tfidf_matrix))
 
 #Test 3: Superhero adventure
-query3 = "Superheroes saving the world with exciting action sequences."
+query3 = "Superheroes superheroes superheroes superheroes saving the world with exciting action sequences."
 print(f"\nTest 3: {query3}")
 print(recommend_movies(query3, df, vectorizer, tfidf_matrix))
 
